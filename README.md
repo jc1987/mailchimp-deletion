@@ -13,7 +13,7 @@ Config looks like this  Mailchimp username,  key, and pagination
     key: blablabal
     items_per_page: 100
 
-Config of DB
+Config of DB, please Create an instance of mysql on your machine
         
     [DB]
     username: root
@@ -22,10 +22,6 @@ Config of DB
     port: 3128
     dbname: datameeting
 
-    
-FIll the settings 
-
-Create an instance of mysql on your machine
 
 ## Usage ##
 fill the lists on a local db
