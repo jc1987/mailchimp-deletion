@@ -1,5 +1,5 @@
 ## What ##
-Delete all the subscribers that are 90 days old (backing them up first)
+Delete all the subscribers that were not active in the past 90 days (backing them up first)
 
 ## Installation ##
 
