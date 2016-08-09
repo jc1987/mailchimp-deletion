@@ -1,0 +1,14 @@
+[MailChimp]
+username: jerome
+key: blablabal
+items_per_page: 100
+
+[DB]
+username: root
+password: lol
+host: 127.0.0.1
+port: 3128
+dbname: datameeting
+
+[SectionTwo]
+Param1: ${MailChimp:Username} ${MailChimp:Username}
