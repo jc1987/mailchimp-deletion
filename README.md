@@ -7,7 +7,7 @@ Delete all the subscribers that were not active in the past 90 days (backing the
     cp settings.ini.dist settings.ini   
 
 import the Database structure only 
-in my case 
+
 
     mysql -u <username> -p<password> -h <host> <database_name> < structure_dump.db
 	
