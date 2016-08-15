@@ -1,0 +1,76 @@
+# ************************************************************
+# Sequel Pro SQL dump
+# Version 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: 0.0.0.0 (MySQL 5.7.13)
+# Database: datameeting
+# Generation Time: 2016-08-15 14:44:51 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table activity
+# ------------------------------------------------------------
+
+CREATE TABLE `activity` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` text,
+  `list_id` text,
+  `action` text,
+  `timestamp` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+# Dump of table list
+# ------------------------------------------------------------
+
+CREATE TABLE `list` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `list_id` varchar(512) DEFAULT NULL,
+  `name` varchar(512) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table subscriber
+# ------------------------------------------------------------
+
+CREATE TABLE `subscriber` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `active` varchar(512) DEFAULT NULL,
+  `timestamp_signup` varchar(256) DEFAULT NULL,
+  `status` varchar(256) DEFAULT NULL,
+  `member_id` varchar(512) DEFAULT NULL,
+  `list_id` int(11) unsigned DEFAULT NULL,
+  `email` varchar(512) DEFAULT NULL,
+  `activities_timestamps` mediumtext,
+  `flag` smallint(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ee` (`list_id`),
+  CONSTRAINT `ee` FOREIGN KEY (`list_id`) REFERENCES `list` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
