@@ -5,6 +5,13 @@ Delete all the subscribers that were not active in the past 90 days (backing the
 
     sudo pip install -r requirements.txt
     cp settings.ini.dist settings.ini   
+
+import the Database structure only 
+in my case 
+
+    mysql -u <username> -p<password> -h <host> <database_name> < structure_dump.db
+	
+
     
 Config looks like this  Mailchimp username,  key, and pagination
     
